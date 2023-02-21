@@ -36,7 +36,7 @@ function Player({ tracks }) {
   console.log(tracks);
   return (
     <div>
-      <h4>SOM ATUAL:</h4>
+      <h4 className="som-atual">SOM ATUAL:</h4>
       <h5>{tracks && tracks[currentSongIdx]?.name}</h5>
       <Controls
         handleNextSong={handleNextSong}
@@ -49,7 +49,7 @@ function Player({ tracks }) {
         {tracks?.map(({ name }, idx) => (
           <TrackInfo
             key={name + idx}
-            color={idx === currentSongIdx ? "green" : "red"}
+            color={idx === currentSongIdx ? "green" : "gray"}
             data={{ name }}
             setCurrentSongIdx={setCurrentSongIdx}
             idx={idx}

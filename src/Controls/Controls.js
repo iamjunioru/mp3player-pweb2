@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Controls.css";
+import { faPlay, faPause, faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Controls({
   handleNextSong,
@@ -22,19 +24,21 @@ export default function Controls({
   }, [audioRef]);
 
   const bar = (currentTime, duration) => {
-    if (!audioRef.current || isNaN(duration)) { // adicionar verificação de undefined
+    if (!audioRef.current || isNaN(duration)) {
       return null;
     }
     return <Bar currentTime={currentTime} duration={duration} />;
   };
 
   return (
-    <div className="player-controls">
-      <button className="play-button" onClick={handlePlay}>PLAY</button>
-      <button className="pause-button" onClick={handlePause}>PAUSE</button>
-      <button className="next-button" onClick={handleNextSong}>NEXT</button>
-      <button className="prev-button" onClick={handlePrevSong}>BACK</button>
-      <span className="progress-bar">{bar(currentTime, audioRef.current?.duration)}</span>
+    <div className="player-container">
+      <div className="player-controls">
+        <button className="prev-button" onClick={handlePrevSong}><FontAwesomeIcon icon={faBackward} /></button>
+        <button className="play-button" onClick={handlePlay}><FontAwesomeIcon icon={faPlay} /></button>
+        <button className="pause-button" onClick={handlePause}><FontAwesomeIcon icon={faPause} /></button>
+        <button className="next-button" onClick={handleNextSong}><FontAwesomeIcon icon={faForward} /></button>
+        <span className="progress-bar">{bar(currentTime, audioRef.current?.duration)}</span>
+      </div>
     </div>
   );
 }
@@ -45,7 +49,7 @@ function Bar({ currentTime, duration }) {
       return "00:00";
     }
     const seconds = Math.floor(time % 60);
-    return `${seconds < 10 ? "0" : ""}${seconds}`;
+    return `${seconds < 10 ? "00:0" : "00:"}${seconds}`;
   };
 
   return (

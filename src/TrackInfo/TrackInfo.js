@@ -8,13 +8,17 @@ export default function TrackInfo({
 }) {
   return (
     <>
-      <h2
-        className="h2-album"
-        onClick={() => setCurrentSongIdx(idx)}
-        style={{ color, cursor: "pointer" }}
+      <h3
+        className="h3-album"
       >
-        ALBUM: {name}
-      </h2>
+        ALBUM:
+      </h3>
+
+      <h2
+      className="h2-album"
+      onClick={() => setCurrentSongIdx(idx)}
+      style={{ color, cursor: "pointer" }}
+      >{name + idx}</h2>
     </>
   );
 }
