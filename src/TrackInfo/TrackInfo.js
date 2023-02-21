@@ -1,4 +1,5 @@
 import React from "react";
+import "./TrackInfo.css";
 
 export default function TrackInfo({
   data: { name },
@@ -8,17 +9,17 @@ export default function TrackInfo({
 }) {
   return (
     <>
-      <h3
-        className="h3-album"
-      >
-        ALBUM:
-      </h3>
+      <div className="div-album">
+        <h3 className="h3-album">ALBUM:</h3>
 
-      <h2
-      className="h2-album"
-      onClick={() => setCurrentSongIdx(idx)}
-      style={{ color, cursor: "pointer" }}
-      >{name + idx}</h2>
+        <h2
+          className="h2-album"
+          onClick={() => setCurrentSongIdx(idx)}
+          style={{ color, cursor: "pointer" }}
+        >
+          {name + idx}
+        </h2>
+      </div>
     </>
   );
 }

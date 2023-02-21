@@ -1,6 +1,32 @@
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
+.div-som {
+  position: fixed;
+  bottom: 160px;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  z-index: 999;
+}
+
+.som-atual {
+  color: white;
+  font-size: 18px;
+}
+
+
+.musica-atual {
+  font-size: 25px;
+  font-weight: 700;
+  color: #1db954;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: fixed;
+  bottom: 120px;
+  left: 0px;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  z-index: 999;
+}
+

@@ -9,14 +9,10 @@ function Player({ tracks }) {
   const audioRef = useRef();
 
   function handleNextSong() {
-    setCurrentSongIdx((curr) =>
-      curr + 1 === tracks.length ? 0 : curr + 1
-    );
+    setCurrentSongIdx((curr) => (curr + 1 === tracks.length ? 0 : curr + 1));
   }
   function handlePrevSong() {
-    setCurrentSongIdx((curr) =>
-      curr - 1 < 0 ? tracks.length - 1 : curr - 1
-    );
+    setCurrentSongIdx((curr) => (curr - 1 < 0 ? tracks.length - 1 : curr - 1));
   }
 
   function handlePlay() {
@@ -27,7 +23,6 @@ function Player({ tracks }) {
     audioRef.current.pause();
   }
 
-
   useEffect(() => {
     const audio = audioRef.current;
     audio.addEventListener("canplay", handlePlay);
@@ -37,15 +32,6 @@ function Player({ tracks }) {
   console.log(tracks);
   return (
     <div>
-      <h4 className="som-atual">SOM ATUAL:</h4>
-      <h5>{tracks && tracks[currentSongIdx]?.name}</h5>
-      <Controls
-        handleNextSong={handleNextSong}
-        handlePrevSong={handlePrevSong}
-        handlePlay={handlePlay}
-        handlePause={handlePause}
-        audioRef={audioRef}
-      />
       <div>
         {tracks?.map(({ name }, idx) => (
           <TrackInfo
@@ -58,6 +44,19 @@ function Player({ tracks }) {
         ))}
       </div>
       <Audio src={tracks && tracks[currentSongIdx]?.src} audioRef={audioRef} />
+      <div className="div-som">
+        <h4 className="som-atual">MÚSICA ATUAL:</h4>
+        <h5 className="musica-atual">
+          {tracks && tracks[currentSongIdx]?.name}
+        </h5>
+        <Controls
+          handleNextSong={handleNextSong}
+          handlePrevSong={handlePrevSong}
+          handlePlay={handlePlay}
+          handlePause={handlePause}
+          audioRef={audioRef}
+        />
+      </div>
     </div>
   );
 }
