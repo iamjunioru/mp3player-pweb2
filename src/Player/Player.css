@@ -1,6 +1,6 @@
 .div-som {
   position: fixed;
-  bottom: 160px;
+  bottom: 185px;
   left: 0;
   right: 0;
   padding: 20px;
@@ -13,7 +13,6 @@
   font-size: 18px;
 }
 
-
 .musica-atual {
   font-size: 25px;
   font-weight: 700;
@@ -22,11 +21,11 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   position: fixed;
-  bottom: 120px;
+  bottom: 113px;
   left: 0px;
   right: 0;
-  padding: 10px;
+  padding: 19px;
   display: flex;
   z-index: 999;
+  background-color: #4400ff;
 }
-

@@ -45,7 +45,7 @@ function Player({ tracks }) {
       </div>
       <Audio src={tracks && tracks[currentSongIdx]?.src} audioRef={audioRef} />
       <div className="div-som">
-        <h4 className="som-atual">MÚSICA ATUAL:</h4>
+        <h4 className="som-atual">MÚSICA TOCANDO:</h4>
         <h5 className="musica-atual">
           {tracks && tracks[currentSongIdx]?.name}
         </h5>
