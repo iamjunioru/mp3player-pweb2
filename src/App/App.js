@@ -4,9 +4,9 @@ import Player from "../Player/Player"
 
 
 
-const API_KEY = "MWNjYjY1NGQtMTU1NS00YTM0LWFlZWItYWZkYzdiMTJiZTll";
-const URL_top = "https://api.napster.com/v2.2/artists/Art.28463069/tracks/top";
-const URL_genres = "https://api.napster.com/v2.2/genres";
+const API_KEY = "YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4";
+const URL_top = "https://api.napster.com/v2.2//artists/art.954/tracks/top";
+// const URL_genres = "https://api.napster.com/v2.2/genres";
 
 const App = () => {
 
