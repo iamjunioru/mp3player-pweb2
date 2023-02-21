@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TrackInfo.css";
 
 export default function TrackInfo({
@@ -7,19 +7,26 @@ export default function TrackInfo({
   setCurrentSongIdx,
   idx,
 }) {
-  return (
-    <>
-      <div className="div-album">
-        <h3 className="h3-album">ALBUM:</h3>
+  const [activeIndex, setActiveIndex] = useState(null);
 
-        <h2
-          className="h2-album"
-          onClick={() => setCurrentSongIdx(idx)}
-          style={{ color, cursor: "pointer" }}
-        >
-          {name + idx}
-        </h2>
-      </div>
-    </>
+  const handleSelectSong = () => {
+    setCurrentSongIdx(idx);
+    setActiveIndex(idx);
+  };
+
+  return (
+    <div
+      className={`div-album ${activeIndex === idx ? "active" : ""}`}
+      onClick={handleSelectSong}
+    >
+      <h3 className="h3-album">ALBUM:</h3>
+
+      <h2
+        className="h2-album"
+        style={{ color, cursor: "pointer" }}
+      >
+        {name}
+      </h2>
+    </div>
   );
 }

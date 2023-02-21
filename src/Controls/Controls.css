@@ -6,16 +6,6 @@
 }
 
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #1e1e1e;
-  color: #fff;
-  padding: 40px;
-  text-align: center;
-}
-
 .player-container {
   position: fixed;
   bottom: 90px;
