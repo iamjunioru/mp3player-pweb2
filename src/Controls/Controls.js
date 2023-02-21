@@ -8,7 +8,6 @@ export default function Controls({
   handlePause,
   audioRef,
 }) {
-  const [perc, setPerc] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
@@ -39,21 +38,21 @@ export default function Controls({
 
 function Bar({ currentTime, duration }) {
   const formatTime = (time) => {
-    const minutes = Math.floor(time / 60);
+    if (isNaN(time)) {
+      return "00:00";
+    }
+    // const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    return `${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
-  return (
-    <div className="bar">
-      <div
-        className="bar__progress"
-        style={{ width: `${(currentTime / duration) * 100}%` }}
-      />
-      <div className="bar__time">
-        <span>{formatTime(currentTime)}</span>
-        <span>{formatTime(duration)}</span>
+    return (
+      <div className="bar">
+        <div className="bar__progress" style={{ width: `${(currentTime / duration) * 100}%` }} />
+        <div className="bar__time">
+          <span>{formatTime(currentTime)}</span>
+          <span>{formatTime(duration)}</span>
+        </div>
       </div>
-    </div>
-  );
+    );
 }
