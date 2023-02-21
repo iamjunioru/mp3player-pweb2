@@ -20,8 +20,11 @@ export default function Controls({
       audio.removeEventListener("timeupdate", handleUpdate);
     };
   }, [audioRef]);
-  
+
   const bar = (currentTime, duration) => {
+    if (!audioRef.current || isNaN(duration)) { // adicionar verificação de undefined
+      return null;
+    }
     return <Bar currentTime={currentTime} duration={duration} />;
   };
 
@@ -31,7 +34,7 @@ export default function Controls({
       <button className="pause-button" onClick={handlePause}>PAUSE</button>
       <button className="next-button" onClick={handleNextSong}>NEXT</button>
       <button className="prev-button" onClick={handlePrevSong}>BACK</button>
-      <span className="progress-bar">{bar(currentTime, audioRef.current.duration)}</span>
+      <span className="progress-bar">{bar(currentTime, audioRef.current?.duration)}</span>
     </div>
   );
 }
@@ -41,18 +44,17 @@ function Bar({ currentTime, duration }) {
     if (isNaN(time)) {
       return "00:00";
     }
-    // const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
-    return (
-      <div className="bar">
-        <div className="bar__progress" style={{ width: `${(currentTime / duration) * 100}%` }} />
-        <div className="bar__time">
-          <span>{formatTime(currentTime)}</span>
-          <span>{formatTime(duration)}</span>
-        </div>
+  return (
+    <div className="bar">
+      <div className="bar__progress" style={{ width: `${(currentTime / duration) * 100}%` }} />
+      <div className="bar__time">
+        <span>{formatTime(currentTime)}</span>
+        <span>{formatTime(duration)}</span>
       </div>
-    );
+    </div>
+  );
 }
