@@ -21,6 +21,8 @@ body {
   }
 
   .div-album:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
     background-color: #1e1e1e;
     color: white;
   }
@@ -47,5 +49,11 @@ body {
   
   .div-album h2:hover {
     color: #1db954;
+  }
+  
+  .div-album.active {
+    transform: scale(1.1);
+    background-color: #4400ff;
+    color: white;
   }
   
