@@ -27,6 +27,7 @@ function Player({ tracks }) {
     audioRef.current.pause();
   }
 
+
   useEffect(() => {
     const audio = audioRef.current;
     audio.addEventListener("canplay", handlePlay);
@@ -49,7 +50,7 @@ function Player({ tracks }) {
         {tracks?.map(({ name }, idx) => (
           <TrackInfo
             key={name + idx}
-            color={idx === currentSongIdx ? "green" : "gray"}
+            color={idx === currentSongIdx ? "#1db954" : "gray"}
             data={{ name }}
             setCurrentSongIdx={setCurrentSongIdx}
             idx={idx}
