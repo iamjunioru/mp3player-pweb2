@@ -8,7 +8,7 @@
   <h3 align="center">OwnSpotify + React + API Napse</h3>
 
   <p align="center">
-    OwnSpotify é um player desenvolvido para entrega uma das atividades da disciplina Programação Web II.<br>
+    OwnSpotify é um player desenvolvido como entrega de uma das atividades da disciplina Programação Web II.<br>
     Feito com React e consumindo API Napse. <br>
     
 ---
