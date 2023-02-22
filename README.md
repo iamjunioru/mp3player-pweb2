@@ -1,7 +1,7 @@
 <div align="center">
   <br>
  <a href="https://github.com/iamjunioru/mp3player-pweb2">
-    <img align="center" src="https://github.com/iamjunioru/mp3player-pweb2/blob/main/public/icon.png" alt="Logo" width="100" height="100">
+    <img align="center" src="https://github.com/iamjunioru/mp3player-pweb2/blob/main/public/icon1.png" alt="Logo" width="100" height="100">
   </a>
   
 
