@@ -29,14 +29,13 @@ function Player({ tracks }) {
     return () => audio.removeEventListener("canplay", handlePlay);
   }, []);
 
-  console.log(tracks);
   return (
     <div>
       <div>
         {tracks?.map(({ name }, idx) => (
           <TrackInfo
             key={name + idx}
-            color={idx === currentSongIdx ? "#1db954" : "gray"}
+            color={idx === currentSongIdx ? "#1db954" : "#3a3a3a"}
             data={{ name }}
             setCurrentSongIdx={setCurrentSongIdx}
             idx={idx}
@@ -44,19 +43,32 @@ function Player({ tracks }) {
         ))}
       </div>
       <Audio src={tracks && tracks[currentSongIdx]?.src} audioRef={audioRef} />
-      <div className="div-som">
-        <h4 className="som-atual">MÚSICA TOCANDO:</h4>
-        <h5 className="musica-atual">
-          {tracks && tracks[currentSongIdx]?.name}
-        </h5>
-        <Controls
-          handleNextSong={handleNextSong}
-          handlePrevSong={handlePrevSong}
-          handlePlay={handlePlay}
-          handlePause={handlePause}
-          audioRef={audioRef}
-        />
-      </div>
+      {tracks[currentSongIdx] && (
+        <div className="div-som">
+          <h4 className="som-atual">MÚSICA TOCANDO:</h4>
+          <h5 className="musica-atual">
+            {tracks[currentSongIdx]?.name}
+          </h5>
+          <Controls
+            handleNextSong={handleNextSong}
+            handlePrevSong={handlePrevSong}
+            handlePlay={handlePlay}
+            handlePause={handlePause}
+            audioRef={audioRef}
+          />
+        </div>
+      )}
+      {!tracks[currentSongIdx] && (
+        <div className="div-som">
+          <Controls
+            handleNextSong={handleNextSong}
+            handlePrevSong={handlePrevSong}
+            handlePlay={handlePlay}
+            handlePause={handlePause}
+            audioRef={audioRef}
+          />
+        </div>
+      )}
     </div>
   );
 }

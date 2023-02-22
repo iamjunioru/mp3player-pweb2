@@ -19,7 +19,7 @@ export default function TrackInfo({
       className={`div-album ${activeIndex === idx ? "active" : ""}`}
       onClick={handleSelectSong}
     >
-      <h3 className="h3-album">ALBUM:</h3>
+      <h3 className="h3-album">ALBUM</h3>
 
       <h2
         className="h2-album"
