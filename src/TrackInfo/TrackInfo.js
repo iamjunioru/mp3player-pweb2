@@ -22,7 +22,7 @@ export default function TrackInfo({
 
   return (
     <div className={`div-album`} onClick={handleSelectSong}>
-      <h3 className="h3-album">ALBUM</h3>
+      <h3 className="h3-album">▶</h3>
 
       <h2 className="h2-album" style={{ color, cursor: "pointer" }}>
         {name}

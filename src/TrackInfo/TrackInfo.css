@@ -6,6 +6,7 @@ body {
   }
   
   .div-album {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,5 +56,9 @@ body {
     transform: scale(1.1);
     background-color: #4400ff;
     color: white;
+    cursor: pointer;
   }
   
+  .h3-album {
+    cursor: pointer;
+  }

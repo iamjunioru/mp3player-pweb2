@@ -5,7 +5,8 @@ import Player from "../Player/Player"
 
 
 const API_KEY = "YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4";
-const URL_top = "https://api.napster.com/v2.2//artists/art.954/tracks/top";
+const URL_top = "https://api.napster.com/v2.2/artists/art.242214194/tracks/top";
+// "https://api.napster.com/v2.2/artists/art.242214194/tracks/top";
 // const URL_genres = "https://api.napster.com/v2.2/genres";
 
 const App = () => {
@@ -24,10 +25,7 @@ const App = () => {
         const data = await res.json();
         console.log("DATA", data)
         setTracks(
-          data.tracks?.map(({ albumName: name, previewURL: src }) => ({
-            name,
-            src
-          }))
+          data.tracks?.map(({ name, previewURL: src }) => ({ name, src }))
         );
       }
     }, []);
