@@ -1,7 +1,7 @@
 <div align="center">
   <br>
  <a href="https://github.com/iamjunioru/mp3player-pweb2">
-    <img align="center" src="https://github.com/iamjunioru/mp3player-pweb2/blob/main/public/icon1.png" alt="Logo" width="100" height="100">
+    <img align="center" src="https://github.com/iamjunioru/ownspotify/blob/main/public/icon1.png" alt="Logo" width="100" height="100">
   </a>
   
 
@@ -30,8 +30,8 @@ yarn start
  <div align="center">
 <h3 align="center">// imgs //</h3>
   <br>
-  <img src="https://github.com/iamjunioru/mp3player-pweb2/blob/main/imgs/1.png" alt="img1"> <br><br>
-  <img src="https://github.com/iamjunioru/mp3player-pweb2/blob/main/imgs/2.png" alt="img2"> <br><br>   
+  <img src="https://github.com/iamjunioru/ownspotify/blob/main/imgs/1.png" alt="img1"> <br><br>
+  <img src="https://github.com/iamjunioru/ownspotify/blob/main/imgs/2.png" alt="img2"> <br><br>   
  <br>
 
 ---
