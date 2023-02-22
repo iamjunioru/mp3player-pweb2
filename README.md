@@ -27,6 +27,15 @@ yarn start
 
 ---
 
+ <div align="center">
+<h3 align="center">// imgs //</h3>
+  <br>
+  <img src="https://github.com/iamjunioru/mp3player-pweb2/blob/main/imgs/1.png" alt="img1"> <br><br>
+  <img src="https://github.com/iamjunioru/mp3player-pweb2/blob/main/imgs/2.png" alt="img2"> <br><br>   
+ <br>
+
+---
+
   <div id="bottom"></div>
     <br>
   <p align="center">
